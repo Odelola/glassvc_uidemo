@@ -1,0 +1,1 @@
+export const PurpleAndFrostCards = require("@assets/images/onboardingImages/PurpleAndFrostCards.png")
