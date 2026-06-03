@@ -1,13 +1,15 @@
 import { PurpleAndFrostCards } from "@assets/images";
 import { AppBox, AppScreen, AppText } from "@/shared";
-import { Image, TouchableOpacity, useWindowDimensions } from "react-native";
+import { Image, Pressable, useWindowDimensions } from "react-native";
 import { APP_COLORS_NAME, APP_FONTS_NAME } from "@/constants";
 import { ArrowRight } from "@/assets/icons";
+import { useRouter } from 'expo-router';
 
 
 
 export default function Onboarding() {
   const { height } = useWindowDimensions();
+    const router = useRouter();
 
   return (
     <AppScreen>
@@ -22,9 +24,9 @@ export default function Onboarding() {
         </AppBox>
 
         <AppBox className="justify-self-end">
-          <TouchableOpacity className="bg-brand size-20 justify-center items-center rounded-3xl">
+          <Pressable className="bg-brand size-20 justify-center items-center rounded-3xl" onPress={() => router.navigate('/(tabs)')}>
             <ArrowRight />
-          </TouchableOpacity>
+          </Pressable>
         </AppBox>
       </AppBox>
     </AppScreen>
