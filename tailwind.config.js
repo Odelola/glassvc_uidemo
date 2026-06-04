@@ -10,7 +10,8 @@ module.exports = {
           '100': '#7C57E7'
         },
         'grey': {
-          DEFAULT: "#8A898E"
+          DEFAULT: "#8A898E",
+          200 : "#444053"
         },
         'heading': {
           DEFAULT: "#453F56"

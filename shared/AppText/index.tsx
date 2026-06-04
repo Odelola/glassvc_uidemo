@@ -9,7 +9,7 @@ interface AppTextProps extends TextProps {
     variant?: 'r' | 'sb' | 'b';
 }
 
-const AppText = ({ colorScheme, size, variant, children, className, style, ...props}: AppTextProps) => {
+const AppText = ({ colorScheme, size, variant, children, style, ...props }: AppTextProps) => {
     const _getScaledFontSize = (size: number) => {
         return PixelRatio.getFontScale() * size;
     }
@@ -28,15 +28,15 @@ const AppText = ({ colorScheme, size, variant, children, className, style, ...pr
 
 
     const variantStyle = _getVariant(variant);
-    
+
     return (
-        <Text 
-        className={className}
-        style={[{
-            color: colorScheme ? APP_COLORS[colorScheme] : variantStyle.color,
-            fontSize: variantStyle.size,
-            fontFamily: variantStyle.fontFamily,
-        }, style]} {...props}>{children}</Text>
+        <Text
+            style={[{
+                color: colorScheme ? APP_COLORS[colorScheme] : variantStyle.color,
+                fontSize: variantStyle.size,
+                fontFamily: variantStyle.fontFamily,
+            }, style]}
+            {...props}>{children}</Text>
     )
 }
 

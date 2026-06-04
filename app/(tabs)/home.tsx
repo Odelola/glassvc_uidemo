@@ -26,7 +26,7 @@ export default function Onboarding() {
         <AppBox className="flex-row justify-between mb-8">
           <BrandCardImage />
           <AppBox className="bg-brand-100 rounded-xl py-2 px-5 self-start">
-            <AppText size={14} className="text-red-500" style={{ color: APP_COLORS[APP_COLORS_NAME.WHITE] }}>10/25</AppText>
+            <AppText size={14} style={{ color: APP_COLORS[APP_COLORS_NAME.WHITE] }}>10/25</AppText>
           </AppBox>
         </AppBox>
         <AppBox>
@@ -37,15 +37,19 @@ export default function Onboarding() {
         </AppBox>
       </AppBox>
       <AppBox className="flex-row justify-between mt-8">
-        {quickInfoCards.map(({cardName, amount}, index) => (
-          <AppBox withShadow={true} key={index}>
+        {quickInfoCards.map(({ cardName, amount }, index) => (
+          <AppBox withShadow={true} key={index} className="p-4">
             <AppText>{cardName}</AppText>
-            <AppText>
-              <AppText>$</AppText>
-              <AppText>{amount}</AppText>
-            </AppText>
+            <AppBox className="flex-row">
+              <AppText size={22}>$</AppText>
+              <AppText size={22} style={{ color: APP_COLORS[APP_COLORS_NAME.GREY200] }}>{amount}</AppText>
+            </AppBox>
           </AppBox>
         ))}
+      </AppBox>
+      <AppBox className="mt-12">
+        <AppText variant="b">History</AppText>
+
       </AppBox>
     </AppScreen>
   );
