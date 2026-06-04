@@ -1,3 +1,4 @@
+import { HomeTabIcon, HomeTabIconActive } from '@/assets/icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
@@ -7,14 +8,23 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarStyle: {
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          paddingTop: 0,
+          height: 70,
+          // display: 'flex',
+          // justifyContent: 'center',
+          // alignItems: 'center'
+        },
         headerShown: false,
+        tabBarLabelVisibilityMode: 'unlabeled'
         // tabBarButton: HapticTab,
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
-        //   tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ focused }) => focused ? <HomeTabIconActive /> : <HomeTabIcon />,
         }}
       />
     </Tabs>
