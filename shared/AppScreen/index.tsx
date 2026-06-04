@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import {ViewProps } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView, SafeAreaViewProps } from 'react-native-safe-area-context';
 
-function AppScreen({ flex = true, children, ...props }: { flex?: boolean } & ViewProps) {
+function AppScreen({ flex = true, children, className, ...props }: { flex?: boolean } & SafeAreaViewProps) {
     return (
-            <SafeAreaProvider className={flex ? "bg-white" : "" } {...props}>
+            <SafeAreaView className={`px-6 ${flex ? "bg-white flex-1 " : ""}` + className}  {...props}>
                 {flex && (<StatusBar style='dark' />)}
                 {children}
-            </SafeAreaProvider>
+            </SafeAreaView>
     )
 }
 
