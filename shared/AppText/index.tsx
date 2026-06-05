@@ -25,8 +25,6 @@ const AppText = ({ colorScheme, size, variant, children, style, ...props }: AppT
         }
     }
 
-
-
     const variantStyle = _getVariant(variant);
 
     return (
@@ -36,7 +34,8 @@ const AppText = ({ colorScheme, size, variant, children, style, ...props }: AppT
                 fontSize: variantStyle.size,
                 fontFamily: variantStyle.fontFamily,
             }, style]}
-            {...props}>{children}</Text>
+            {...props}
+            >{children}</Text>
     )
 }
 

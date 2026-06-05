@@ -36,7 +36,7 @@ export interface TRANSACTION_HISTORY {
   time: string;
   amount: number;
 }
-export default function Onboarding() {
+export default function Home() {
 
   const bottomHeight = useBottomTabBarHeight();
   return (
@@ -75,9 +75,9 @@ export default function Onboarding() {
           {quickInfoCards.map(({ cardName, amount }, index) => (
             <AppBox withShadow={true} key={index} className="p-4 rounded-xl w-[45%]" >
               <AppText>{cardName}</AppText>
-              <AppBox className="flex-row">
+              <AppBox className="flex-row items-center">
                 <AppText size={22}>$</AppText>
-                <AppText size={22} style={{ color: APP_COLORS[APP_COLORS_NAME.GREY200] }}>{amount.toLocaleString('en-US', {
+                <AppText variant="sb" size={22} style={{ color: APP_COLORS[APP_COLORS_NAME.GREY200] }}>{amount.toLocaleString('en-US', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2
                 })}</AppText>
