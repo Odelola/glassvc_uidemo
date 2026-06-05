@@ -5,5 +5,6 @@ export { default as ProfileTabIcon } from "./ProfileTabIcon.svg"
 export { default as ProfileTabIconActive } from "./ProfileTabIconActive.svg"
 export { default as ReceiptTabIcon } from "./ReceiptTabIcon.svg"
 export { default as ReceiptTabIconActive } from "./ReceiptTabIconActive.svg"
+export { default as SendMoneyOutIcon } from "./SendMoneyOutIcon.svg"
 
 export { default as BrandCardImage } from "./svgImages/BrandCardImage.svg"

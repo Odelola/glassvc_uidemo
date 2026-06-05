@@ -6,29 +6,19 @@ interface AppBoxProps extends ViewProps {
 }
 
 const AppBox = ({ children, withShadow = false, style, ...props }: AppBoxProps) => {
-    const mallam =  
-    StyleSheet.create({
-
-        android: {...Platform.select({
-                        ios: {
-                            shadowColor: '#000',
-                            shadowOffset: { width: 0, height: 4 },
-                            shadowOpacity: 0.3,
-                            shadowRadius: 6,
-                        },
-                        android: {
-                            background: 'red',
-                            elevation: 10, // Higher value for a more pronounced shadow
-                        },
-                    })}
-    })
 
     return (
-        <View style={mallam.android}
-         {...props}>
+        <View style={[withShadow && shadowStyles.boxShadow, style]} {...props}>
             {children}
         </View>
     )
 }
+
+const shadowStyles =
+    StyleSheet.create({
+        boxShadow: {
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
+        }
+    })
 
 export default AppBox

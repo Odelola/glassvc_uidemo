@@ -7,7 +7,8 @@ module.exports = {
       colors: {
         'brand': {
           DEFAULT: "#7747FD",
-          '100': '#7C57E7'
+          '100': '#7C57E7',
+          '200': '#794EF1'
         },
         'grey': {
           DEFAULT: "#8A898E",
