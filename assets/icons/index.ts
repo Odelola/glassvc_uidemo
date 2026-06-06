@@ -1,4 +1,4 @@
-export { default as ArrowRight } from "./ArrowRight.svg"
+export { default as ArrowRightIcon } from "./ArrowRightIcon.svg"
 export { default as HomeTabIcon } from "./HomeTabIcon.svg"
 export { default as HomeTabIconActive } from "./HomeTabIconActive.svg"
 export { default as ProfileTabIcon } from "./ProfileTabIcon.svg"
@@ -6,5 +6,7 @@ export { default as ProfileTabIconActive } from "./ProfileTabIconActive.svg"
 export { default as ReceiptTabIcon } from "./ReceiptTabIcon.svg"
 export { default as ReceiptTabIconActive } from "./ReceiptTabIconActive.svg"
 export { default as SendMoneyOutIcon } from "./SendMoneyOutIcon.svg"
+export { default as PlusIcon } from "./PlusIcon.svg"
+export { default as ArrowLeftNavigatorIcon } from "./ArrowLeftNavigatorIcon.svg"
 
 export { default as BrandCardImage } from "./svgImages/BrandCardImage.svg"
