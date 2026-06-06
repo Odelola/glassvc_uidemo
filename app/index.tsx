@@ -2,7 +2,7 @@ import { PurpleAndFrostCards } from "@assets/images";
 import { AppBox, AppScreen, AppText } from "@/shared";
 import { Image, PixelRatio, Pressable, useWindowDimensions } from "react-native";
 import { APP_COLORS_NAME, APP_FONTS_NAME } from "@/constants";
-import { ArrowRight } from "@/assets/icons";
+import { ArrowRightIcon } from "@/assets/icons";
 import { useRouter } from 'expo-router';
 
 
@@ -26,7 +26,7 @@ export default function Onboarding() {
 
         <AppBox className="justify-self-end">
           <Pressable className="bg-brand size-20 justify-center items-center rounded-3xl" onPress={() => router.navigate('/(tabs)/home')}>
-            <ArrowRight />
+            <ArrowRightIcon />
           </Pressable>
         </AppBox>
       </AppBox>

@@ -1,35 +1,32 @@
-import { HomeTabIcon, HomeTabIconActive, ProfileTabIcon, ProfileTabIconActive, ReceiptTabIcon, ReceiptTabIconActive } from '@/assets/icons';
+import { HomeTabIcon, HomeTabIconActive, PlusIcon, ProfileTabIcon, ProfileTabIconActive, ReceiptTabIcon, ReceiptTabIconActive } from '@/assets/icons';
 import { AppBox } from '@/shared';
-import { Tabs } from 'expo-router';
+import { useRouter, Tabs } from 'expo-router';
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
+import { Dimensions, StyleSheet } from 'react-native';
+import Svg, { Defs, Mask, Path, Polygon, Rect } from 'react-native-svg';
 
 export default function TabLayout() {
+  const router = useRouter();
+  const { width } = Dimensions.get('window');
+
+
+  function TempTabButton() {
+    return (
+      <AppBox className='bg-brand size-16 justify-center items-center rounded-lg -rotate-45 bottom-1/2'>
+        <PlusIcon style={{ transform: [{ rotate: '45deg' }], }} />
+      </AppBox>
+    )
+  }
 
   function TabBarTransparentSvg() {
     return (
-      <AppBox style={StyleSheet.absoluteFillObject}>
-        <Svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 400 70"
-          preserveAspectRatio="none"
-          style={{ backgroundColor: 'transparent' }}
-        >
-          <Path
-            d="M0 20 Q 200 0 400 20 L 400 70 L 0 70 Z"
-            fill="rgba(255, 255, 255, 0.8)" 
-          />
-        </Svg>
-      </AppBox>
+      <AppBox />
     );
   }
 
   return (
     <Tabs
       screenOptions={{
-        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         tabBarStyle: {
           position: 'absolute',
           borderTopWidth: 0,
@@ -37,14 +34,17 @@ export default function TabLayout() {
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
           paddingTop: 0,
-          height: 70,
-          // display: 'flex',
-          // justifyContent: 'center',
-          // alignItems: 'center'
+          height: 80,
+          boxShadow: '0px 0px 20px rgba(176, 176, 176, 0.25)'
+        },
+        tabBarIconStyle: {
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
         },
         headerShown: false,
         tabBarLabelVisibilityMode: 'unlabeled',
-        tabBarBackground: () => <TabBarTransparentSvg />,
+        // tabBarBackground: () => <TabBarTransparentSvg />,
       }}>
       <Tabs.Screen
         name="home"
@@ -65,11 +65,24 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="create-vc-redirect"
+        options={{
+          title: 'Create VC',
+          tabBarIcon: () => <TempTabButton />
+        }}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            router.navigate("/create-vc")
+          }
+        }}
+      />
+      {/* <Tabs.Screen
         name="custom"
         options={{
           title: 'Custom',
           tabBarLabel: 'Custom',
-          // tabBarButton: SpecialTabButton
+          tabBarButton: TempTabButton
         }}
         listeners={{
           tabPress: (e) => {
@@ -77,7 +90,7 @@ export default function TabLayout() {
             console.log('tabPress');
           }
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
