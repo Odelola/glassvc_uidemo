@@ -1,5 +1,5 @@
 import { BrandCardImage } from "@/assets/icons";
-import { TransactionCard } from "@/components";
+import { ScreenHeader, TransactionCard } from "@/components";
 import { APP_COLORS, APP_COLORS_NAME } from "@/constants";
 import { AppBox, AppScreen, AppText } from "@/shared";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
@@ -41,10 +41,10 @@ export default function Home() {
   const bottomHeight = useBottomTabBarHeight();
   return (
     <AppScreen>
-      <AppBox className="mb-12">
-        <AppText variant="b">Hi, Jeremy!</AppText>
-        <AppText>Let’s make your banking needs easy!</AppText>
-      </AppBox>
+      <ScreenHeader title="Hi, Jeremy!"
+        description="Let’s make your banking needs easy!"
+        withNavigator={false}
+      />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: bottomHeight / 2 }}
