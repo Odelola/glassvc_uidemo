@@ -12,10 +12,14 @@ module.exports = {
         },
         'grey': {
           DEFAULT: "#8A898E",
+          100 : "##A6A5A6",
           200 : "#444053"
         },
         'heading': {
           DEFAULT: "#453F56"
+        },
+        'white': {
+          100: "#DFD4FE"
         }
       },
     },
