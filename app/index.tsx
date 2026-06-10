@@ -1,7 +1,6 @@
 import { PurpleAndFrostCards } from "@assets/images";
 import { AppBox, AppScreen, AppText } from "@/shared";
 import { Image, PixelRatio, Pressable, useWindowDimensions } from "react-native";
-import { APP_COLORS_NAME, APP_FONTS_NAME } from "@/constants";
 import { ArrowRightIcon } from "@/assets/icons";
 import { useRouter } from 'expo-router';
 

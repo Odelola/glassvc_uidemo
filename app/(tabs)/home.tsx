@@ -1,6 +1,5 @@
 import { BrandCardImage } from "@/assets/icons";
 import { TransactionCard } from "@/components";
-import { APP_COLORS, APP_COLORS_NAME } from "@/constants";
 import { AppBox, AppScreen, AppText } from "@/shared";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
@@ -59,14 +58,14 @@ export default function Home() {
             <AppBox className="flex-row justify-between mb-8">
               <BrandCardImage />
               <AppBox className="bg-brand-100 rounded-xl py-2 px-5 self-start">
-                <AppText size={14} style={{ color: APP_COLORS[APP_COLORS_NAME.WHITE] }}>10/25</AppText>
+                <AppText size={14} className="text-white">10/25</AppText>
               </AppBox>
             </AppBox>
             <AppBox>
-              <AppText variant="b" style={{ color: APP_COLORS[APP_COLORS_NAME.WHITE] }}>7381 2929 2811 7739</AppText>
+              <AppText variant="b" className="text-white">7381 2929 2811 7739</AppText>
             </AppBox>
             <AppBox>
-              <AppText size={20} style={{ color: APP_COLORS[APP_COLORS_NAME.WHITE100] }}>Jeremy Palpale</AppText>
+              <AppText size={20} className="text-white-100">Jeremy Palpale</AppText>
             </AppBox>
           </AppBox>
 
@@ -77,7 +76,7 @@ export default function Home() {
               <AppText>{cardName}</AppText>
               <AppBox className="flex-row items-center">
                 <AppText size={22}>$</AppText>
-                <AppText variant="sb" size={22} style={{ color: APP_COLORS[APP_COLORS_NAME.GREY200] }}>{amount.toLocaleString('en-US', {
+                <AppText variant="sb" size={22} className="text-grey-200">{amount.toLocaleString('en-US', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2
                 })}</AppText>
@@ -91,7 +90,7 @@ export default function Home() {
             data={transactionHistory}
             ItemSeparatorComponent={() => <AppBox className="mb-6"></AppBox>}
             renderItem={({ item }) => (<TransactionCard historyItem={item} />)}
-            keyExtractor={(item, index) => index.toString()}
+            keyExtractor={(_, index) => index.toString()}
             showsHorizontalScrollIndicator={false}
             scrollEnabled={false}
           />
