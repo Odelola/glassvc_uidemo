@@ -8,5 +8,6 @@ export { default as ReceiptTabIconActive } from "./ReceiptTabIconActive.svg"
 export { default as SendMoneyOutIcon } from "./SendMoneyOutIcon.svg"
 export { default as PlusIcon } from "./PlusIcon.svg"
 export { default as ArrowLeftNavigatorIcon } from "./ArrowLeftNavigatorIcon.svg"
+export { default as ContactIcon } from "./ContactIcon.svg"
 
 export { default as BrandCardImage } from "./svgImages/BrandCardImage.svg"

@@ -8,19 +8,25 @@ module.exports = {
         'brand': {
           DEFAULT: "#7747FD",
           100: "#7C57E7",
-          200: "#794EF1",
+          300: "#794EF1",
+          800: "#F0EBFD"
         },
         'grey': {
           DEFAULT: "#8A898E",
           100 : "#A6A5A6",
-          200 : "#444053"
+          200 : "#444053",
+          300 : "#5A5663",
+          400 : "#B5B1BB",
         },
         'heading': {
-          DEFAULT: "#453F56"
+          DEFAULT: "#453F56",
+          100 : "#5E5968",
         },
         'white': {
           DEFAULT: "#FFFFFF",
-          100: "#DFD4FE"
+          100: "#DFD4FE",
+          200 : "#F1F1F3",
+          300: "#F3EFF5"
         }
       },
     },
