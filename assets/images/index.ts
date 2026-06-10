@@ -1,1 +1,2 @@
 export const PurpleAndFrostCards = require("@assets/images/onboardingImages/PurpleAndFrostCards.png")
+export const VirtualCardBlurred = require("@assets/images/virtualCardImages/VirtualCardBlurred.png")

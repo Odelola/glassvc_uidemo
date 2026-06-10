@@ -1,6 +1,7 @@
 import { BrandCardImage } from "@/assets/icons";
-import { TransactionCard } from "@/components";
+import { ScreenHeader, TransactionCard } from "@/components";
 import { AppBox, AppScreen, AppText } from "@/shared";
+import { formatCurrency } from "@/utils";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { LinearGradient } from 'expo-linear-gradient';
@@ -40,11 +41,12 @@ export default function Home() {
   const bottomHeight = useBottomTabBarHeight();
   return (
     <AppScreen>
-      <AppBox className="mb-12">
-        <AppText variant="b">Hi, Jeremy!</AppText>
-        <AppText>Let’s make your banking needs easy!</AppText>
-      </AppBox>
+      <ScreenHeader title="Hi, Jeremy!"
+        description="Let’s make your banking needs easy!"
+        withNavigator={false}
+      />
       <ScrollView
+      className="mt-8"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: bottomHeight / 2 }}
       >
@@ -76,10 +78,7 @@ export default function Home() {
               <AppText>{cardName}</AppText>
               <AppBox className="flex-row items-center">
                 <AppText size={22}>$</AppText>
-                <AppText variant="sb" size={22} className="text-grey-200">{amount.toLocaleString('en-US', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2
-                })}</AppText>
+                <AppText variant="sb" size={22} className="text-grey-200">{formatCurrency(amount)}</AppText>
               </AppBox>
             </AppBox>
           ))}
