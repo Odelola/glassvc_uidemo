@@ -25,6 +25,11 @@ const AppText = ({ size, variant, className, children, style, ...props }: AppTex
     }
 
     const variantStyle = _getVariant(variant);
+    const hasCustomColor = className && /\btext-/.test(className);
+
+    const finalClassName = hasCustomColor 
+    ? className 
+    : `${variantStyle.className} ${className ?? ''}`;
 
     return (
         <Text
@@ -32,7 +37,7 @@ const AppText = ({ size, variant, className, children, style, ...props }: AppTex
                 fontSize: variantStyle.size,
                 fontFamily: variantStyle.fontFamily,
             }, style]}
-            className={`${variantStyle.className} ${className}`}
+            className={finalClassName}
             {...props}
             >{children}</Text>
     )

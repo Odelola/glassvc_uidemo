@@ -16,7 +16,7 @@ export default function TransactionCard({ historyItem }: { historyItem: TRANSACT
                 </AppBox>
             </AppBox>
             <AppBox>
-                <AppText variant="sb" className="text-brand-300">{`$${historyItem.amount}`}</AppText>
+                <AppText variant="sb" className="text-brand-200">{`$${historyItem.amount}`}</AppText>
             </AppBox>
         </AppBox>
     )
