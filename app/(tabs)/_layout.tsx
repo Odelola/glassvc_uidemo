@@ -1,41 +1,45 @@
 import { HomeTabIcon, HomeTabIconActive, PlusIcon, ProfileTabIcon, ProfileTabIconActive, ReceiptTabIcon, ReceiptTabIconActive } from '@/assets/icons';
+import { TabBarMaskedBackground } from '@/components';
 import { AppBox } from '@/shared';
 import { useRouter, Tabs } from 'expo-router';
 import React from 'react';
-import { Dimensions, StyleSheet } from 'react-native';
-import Svg, { Defs, Mask, Path, Polygon, Rect } from 'react-native-svg';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+const TABBAR_HEIGHT = 60;
+export const CREATEVCICON_DIMESIONS = -1 * TABBAR_HEIGHT * .75;
 
 export default function TabLayout() {
   const router = useRouter();
-  const { width } = Dimensions.get('window');
 
 
-  function TempTabButton() {
+  function CreateVCButton() {
+
     return (
-      <AppBox className='bg-brand size-16 justify-center items-center rounded-lg -rotate-45 bottom-1/2'>
+      <AppBox className='bg-brand size-16 justify-center items-center rounded-lg -rotate-45'
+        style={{
+          position: 'absolute',
+          top: CREATEVCICON_DIMESIONS,
+          right: 0,
+
+        }}
+      >
         <PlusIcon style={{ transform: [{ rotate: '45deg' }], }} />
       </AppBox>
     )
   }
-
-  function TabBarTransparentSvg() {
-    return (
-      <AppBox />
-    );
-  }
+  const insets = useSafeAreaInsets();
 
   return (
+
     <Tabs
       screenOptions={{
         tabBarStyle: {
           position: 'absolute',
           borderTopWidth: 0,
           elevation: 0,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
+          shadowOpacity: 0,
           paddingTop: 0,
-          height: 80,
-          boxShadow: '0px 0px 20px rgba(176, 176, 176, 0.25)'
+          height: TABBAR_HEIGHT + insets.bottom,
         },
         tabBarIconStyle: {
           flex: 1,
@@ -44,7 +48,7 @@ export default function TabLayout() {
         },
         headerShown: false,
         tabBarLabelVisibilityMode: 'unlabeled',
-        // tabBarBackground: () => <TabBarTransparentSvg />,
+        tabBarBackground: () => <TabBarMaskedBackground />,
       }}>
       <Tabs.Screen
         name="home"
@@ -68,7 +72,7 @@ export default function TabLayout() {
         name="create-vc-redirect"
         options={{
           title: 'Create VC',
-          tabBarIcon: () => <TempTabButton />
+          tabBarIcon: () => <CreateVCButton />
         }}
         listeners={{
           tabPress: (e) => {
@@ -77,19 +81,6 @@ export default function TabLayout() {
           }
         }}
       />
-      {/* <Tabs.Screen
-        name="custom"
-        options={{
-          title: 'Custom',
-          tabBarLabel: 'Custom',
-          tabBarButton: TempTabButton
-        }}
-        listeners={{
-          tabPress: (e) => {
-            e.preventDefault();
-          }
-        }}
-      /> */}
     </Tabs>
   );
 }

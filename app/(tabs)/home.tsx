@@ -37,7 +37,6 @@ export interface TRANSACTION_HISTORY {
   amount: number;
 }
 export default function Home() {
-
   const bottomHeight = useBottomTabBarHeight();
   return (
     <AppScreen>
@@ -48,7 +47,7 @@ export default function Home() {
       <ScrollView
       className="mt-8"
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: bottomHeight / 2 }}
+        contentContainerStyle={{ paddingBottom: bottomHeight * 1.75  }}
       >
         <LinearGradient
           colors={['#9877FD', '#7747FD']}
@@ -59,7 +58,7 @@ export default function Home() {
           <AppBox className="rounded-[36px] p-6">
             <AppBox className="flex-row justify-between mb-8">
               <BrandCardImage />
-              <AppBox className="bg-brand-100 rounded-xl py-2 px-5 self-start">
+              <AppBox className="bg-brand-100 rounded-2xl py-2 px-5 self-start">
                 <AppText size={14} className="text-white">10/25</AppText>
               </AppBox>
             </AppBox>

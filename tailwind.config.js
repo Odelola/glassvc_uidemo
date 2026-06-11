@@ -8,7 +8,7 @@ module.exports = {
         'brand': {
           DEFAULT: "#7747FD",
           100: "#7C57E7",
-          300: "#794EF1",
+          200: "#764AF5",
           800: "#F0EBFD"
         },
         'grey': {
@@ -27,7 +27,7 @@ module.exports = {
           100: "#DFD4FE",
           200 : "#F1F1F3",
           300: "#F3EFF5"
-        }
+        },
       },
     },
   },

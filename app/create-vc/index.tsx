@@ -3,7 +3,7 @@ import { VirtualCardBlurred } from "@/assets/images";
 import { ScreenHeader } from "@/components";
 import { AppBox, AppButton, AppScreen, AppText } from "@/shared";
 import { formatCurrency } from "@/utils";
-import { Dimensions, Image, Pressable, ScrollView, TextInput } from "react-native";
+import { Image, Pressable, ScrollView, TextInput } from "react-native";
 import { useState } from "react";
 import { APP_FONTS_NAME } from "@/constants";
 
@@ -11,7 +11,6 @@ import { APP_FONTS_NAME } from "@/constants";
 const LIMITS = [1000, 5000, 10000, null]
 
 export default function Onboarding() {
-  const { width } = Dimensions.get("window");
 
   const [cardName, setCardName] = useState("Jeremy Palpale");
   const [selectedLimit, setSelectedLimit] = useState<number | null>(1000);
@@ -27,7 +26,7 @@ export default function Onboarding() {
         />
 
         <AppBox className="relative px-6 py-12 rounded-3xl mt-36" style={{ boxShadow: "0px 4px 100px rgba(0, 0, 0, 0.15)" }}>
-          <Image source={VirtualCardBlurred} alt="Virtual Card Blurred Image" className="absolute" style={{ transform: [{ translateX: width / 5 }, { translateY: "-50%" },], }} />
+          <Image source={VirtualCardBlurred} alt="Virtual Card Blurred Image" className="absolute " style={{ alignSelf: 'center', transform: [{ translateY: -50 }] }} />
           <AppBox className="mt-12">
             <AppText className="text-grey-400">Card Name</AppText>
             <AppBox className="flex-row mt-6 gap-x-4 text-3xl bg-white-200 rounded-3xl py-4 px-6 items-center">
